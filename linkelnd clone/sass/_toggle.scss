@@ -1,0 +1,186 @@
+$mobile:800px;
+@mixin phone {
+   @media(max-width: $mobile){
+      @content
+   }
+}
+
+.head{
+   display: none;
+   @include phone{
+      width: 100vw;
+      background-color: #015050;
+      display: flex;
+      justify-content: space-evenly;
+      margin: 0 30px;
+      padding: 10px;
+      height: fit-content;
+      img{
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
+         position: relative;
+         z-index: 5001;
+      }
+   }
+
+}
+@include phone{
+   .iconss{
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      align-items: center;
+      gap: 15px;
+      color: white;
+      aside{
+         display: flex;
+         gap: 10px;
+      }
+   }
+}
+.checkbox, #checkbox{
+   @include phone{
+      display: none;
+     margin-right: auto;
+   }
+}
+@include phone{
+   .toggle-menu{
+      position: relative;
+      width: 5rem;
+      height: 3.5rem;
+      padding: 0.5rem;
+      z-index: 5001;
+      border-radius: 6px;
+      background-color:#015050;
+      box-shadow: 5px 5px 5px #023838;
+      margin: 1rem 3rem 1rem 0.5rem ;
+   }
+}
+
+@include phone{
+   .toggle-lines{
+      position: absolute;
+      width: 80%;
+      height: 0.25rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+     transition:all 0.3s ;
+     background-color: white;
+      
+      
+   }
+
+}
+@include phone{
+   .toggle-menu::before, .toggle-menu::after{
+      position: absolute;
+      width: 80%;
+      height: 0.25rem;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition:all 0.3s ;
+      background-color: white;
+      content: "";
+   }
+}
+@include phone{
+   .toggle-menu::after{
+      top: 75%;
+   }
+   .cont{
+      width: 55vw;
+      height: 60vh;
+      overflow: hidden;
+      transition: all 0.4s;
+      transform: scale(0);
+      z-index: 5000;
+      top: 10.5%;
+      right: 5%;
+      position: fixed;
+      padding: 50px 18px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background:#015050;
+      box-shadow: 5px 5px 5px #023838;
+   }
+   .container{
+      width: 55vw;
+      height: fit-content;
+      transform: scale(0);
+      overflow: hidden;
+      transition: all 0.4s;
+      z-index: 5000;
+      top: 10.5%;
+      left: 3%;
+      padding: 10px 10px;
+      position: fixed;
+      background-color: #015050;
+      box-shadow: 5px 5px 5px #023838;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+
+   }
+
+   .checkbox:checked ~ .toggle-menu::before{
+      transform:translate(-50%, -50%) rotate(45deg);
+      top: 50%;
+   }
+   .checkbox:checked ~ .toggle-menu .toggle-lines{
+      opacity: 0;
+   }
+   .checkbox:checked ~ .toggle-menu::after{
+      transform: translate(-50%, -50%) rotate(-45deg);
+      top: 50%;
+   }
+   .checkbox:checked ~ .cont{
+      transform: scale(1);
+   }
+   #checkbox:checked ~ .container{
+      transform: scale(1);
+   }
+}
+@include phone{
+   .content{
+      // border: 2px solid gray;
+      height: fit-content;
+      background: linear-gradient( #0077b5 25% , white 25%);
+      
+      img{
+         width: 60px;
+         height: 60px;
+         border: 1px solid black;
+         border-radius: 50%;      
+      }
+   }
+   .middle{
+      text-align: center;
+      position: relative;
+      top: 25px;
+      margin: 35px 0 25px 0 ;
+   }
+   .borders{
+      border-top: 1px solid gray;
+      border-bottom: 1px solid gray;
+      padding: 15px 5px;
+      aside{
+         display: flex;
+         justify-content: space-between;
+      }
+   }
+   .seconded{
+      margin: 10px 0;
+      height: fit-content;
+      color: white;
+      
+      aside{
+         display: flex;
+         justify-content: space-between;
+         padding: 15px;
+      }
+   }
+   
+}

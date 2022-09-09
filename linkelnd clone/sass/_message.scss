@@ -1,0 +1,23 @@
+.messages{
+   width: 100vw;
+   height: 100vh;
+   h2{
+      font-family: monospace;
+      font-size: 18px;
+   }
+
+}
+.fess{
+   display: flex;
+   justify-content: space-between;
+   padding: 5px 10px;
+}
+.grid{
+   display: grid;
+   grid-template-columns: 1fr, 2fr;
+   width: 100vw;
+   height: fit-content;
+}
+.text{
+   margin: 15px;
+}

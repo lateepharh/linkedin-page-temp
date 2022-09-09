@@ -1,0 +1,248 @@
+@forward "toggle";
+@forward "message";
+$mobile:800px;
+@mixin phone {
+   @media(max-width: $mobile){
+      @content
+   }
+}
+*,*::after,*::before{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+body{
+   height: 100vh;
+   width: 100vw;
+}
+header{
+   background-color: #015050;
+   display: flex;
+   width: 100vw;
+   height: fit-content;
+   padding: 5px 50px 5px 50px;
+   justify-content: space-between;
+   @include phone{
+      display: none;
+   }
+   aside{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      color: rgb(216, 212, 212);
+   }
+}
+.me{
+   border-left: 1px solid gray;
+   margin-left: 3px;
+   img{
+      width: 15px;
+      height: 15px;
+      border-radius:50% ;
+   }
+}
+.icons{
+   display: flex;
+   gap: 15px;
+   p:hover{
+     transform: scale(1);
+     font-size: 18px;
+   }
+}
+#search{
+   width: 250px;
+   border-radius: 5px;
+   padding: 5px;
+}
+.logo{
+   align-self:center ;
+}
+
+main{
+   width: 100vw;
+   height: fit-content;
+   margin: 15px;
+   display: grid;
+   grid-template-columns: 18vw 52vw 28vw;
+   @include phone{
+      width: 100vw;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+   }
+}
+.one{
+   @include phone{
+      display: none;
+   }
+}
+.first{
+   // border: 2px solid gray;
+   height: fit-content;
+   background: linear-gradient( #0077b5 25% , white 25%);
+   box-shadow: 5px 5px 5px rgb(230, 224, 224), -5px -5px 5px rgb(230, 224, 224);
+   img{
+      width: 60px;
+      height: 60px;
+      border: 1px solid black;
+      border-radius: 50%;      
+   }
+}
+.center{
+   text-align: center;
+   position: relative;
+   top: 25px;
+   margin: 35px 0 25px 0 ;
+}
+.border{
+   border-top: 1px solid gray;
+   border-bottom: 1px solid gray;
+   padding: 15px 5px;
+   aside{
+      display: flex;
+      justify-content: space-between;
+   }
+}
+.second{
+   margin: 10px 0;
+   height: fit-content;
+   box-shadow: 5px 5px 5px rgb(230, 224, 224), -5px -5px 5px rgb(230, 224, 224);
+   
+   aside{
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+   }
+}
+.two{
+   margin: 0 20px;
+   height: fit-content;
+   @include phone{
+      margin: 0 30px;
+   }
+}
+a{
+   text-decoration: none;
+}
+.upper{
+   // border: 1px solid gray;
+   padding: 5px;
+   background-color: rgb(250, 246, 246);
+   box-shadow: 5px 5px 5px rgb(230, 224, 224);
+   hr{
+      color: gray;
+   }
+}
+.flex{
+   display: flex;
+   padding: 5px;
+   justify-content: space-between;
+}
+.sort{
+   float: right;
+}
+.sort::before{
+   content: "";
+   position: absolute;
+   height: 1.5px;
+   width: 42.2vw;
+   left: 20.8%;
+   top: 21.2%;
+   background-color: gray;
+   @include phone{
+      top: 23.2%;
+      width: 70vw;
+      left: 9.5%;
+   }
+}
+.user{
+   display: flex;
+   justify-content: space-between;
+   padding: 10px;
+   aside{
+      display: inline-flex;
+      gap: 15px;
+      align-self: center;
+      img{
+         height: 50px;
+         width: 50px;
+         border-radius: 50%;
+      }
+   }
+}
+.third{
+   margin-top: 22px;
+   background-color: rgb(250, 246, 246);
+   border-radius: 5px;
+   box-shadow: 5px 5px 5px rgb(230, 224, 224), -5px -5px 5px rgb(230, 224, 224);
+   // border: 1px solid grey;
+}
+.users{
+   display: flex;
+   gap: 25px;
+   padding: 10px;
+}
+i:hover{
+   transform: scale(1);
+}
+.remote{
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   padding:10px 5px;
+   border: 3px solid green;
+}
+.three{
+   margin: 10px 5px 10px 0;
+   @include phone{
+      margin: 10px 30px;
+   }
+}
+.follow{
+   height: fit-content;
+   width: fit-content;
+   padding: 5px;
+   border: 1px solid rgb(96, 96, 235);
+}
+.feeds{
+   height: fit-content;
+   // border: 1px solid black;
+   padding: 10px 3px 10px 5px;
+   box-shadow: 5px 5px 5px rgb(230, 224, 224), -5px -5px 5px rgb(230, 224, 224);
+   border-radius: 5px;
+}
+h4{
+   color:rgb(37, 37, 158);
+   text-align: center;
+   transition: all 0.2s ease;
+}
+.image{
+   height: 200px;
+   position: relative;
+   background-image: url(../pics/group.jpg);
+   margin: 10px 0;
+   aside{
+      position: relative;
+      // top: 30px;
+      text-align: center;
+      transition: all 0.4s ease-in-out;
+      background-color: rgba(0,0,0,0.2);
+      p{
+         font-size: 18px;
+      }
+   }
+}
+button{
+   width: fit-content;
+   height: fit-content;
+   padding: 10px;
+   border-radius: 5px;
+   border: 1px solid #0077b5;
+   background-color: #0077b5;
+   margin: 13px;
+   a{
+      color: white;
+   }
+}
